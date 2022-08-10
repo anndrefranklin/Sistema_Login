@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font-awesome-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <!--BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Cadastro</title>
+</head>
+<body>
+    <div id="cadastro" class="container">        
+        <div class="card">
+             <h1>Cadastrar</h1>        
+
+            <div id="msgSucesso">Sucesso</div>
+            <div id="msgError">Error</div>
+
+             <div class="label-float">
+                <input type="text" id="nome" required>
+                <label id="lb_nome" for="nome">Nome</label>
+            </div>
+
+             <div class="label-float">
+                 <input id="usuario" type="text" required>
+                 <label id="lb_usuario" for="usuario">Usuário</label>
+             </div>
+     
+             <div class="label-float">
+                 <input type="password" id="senhaCad" required>
+                 <label id="lb_senhaCad" for="senha">Senha</label>
+                 <i id="versenha" class="fa fa-eye" aria-hidden="true"></i>
+             </div>
+
+             <div class="label-float">
+                <input type="password" id="conf_senha" required>
+                <label id="lb_conf_senha" for="conf_senha" >Confirmar Senha</label>
+                <i id="verconfsenha" class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+     
+             <div class="justify-center">
+                 <button  id="btn-entrar" onclick="cadastrar()">Cadastrar</button>
+             </div>      
+        </div>  
+    </div>
+    
+    <script src="js/scripts.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
