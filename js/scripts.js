@@ -158,20 +158,48 @@ btnConf_senha.addEventListener('click', ()=>{
 
 function entrar(){
     let usuario = document.querySelector('#usuario')
-    let lb_usuario = document.querySelector('#usuario_label')
+    let lb_usuario = document.querySelector('#user_label')
 
     let senha = document.querySelector('#senha')
     let lb_senha = document.querySelector('#senha_label')
 
     let msgError = document.querySelector('#msgError')
-
     let listaUser = []
 
-    let usuarioValid ={
+    let userValid = {
         nome:'',
-        usuario:'',
+        user:'',
         senha:''
     }
 
-    listaUser = JSON.parse(localStorage. getItem(''))
+    listaUser = JSON.parse(localStorage.getItem('listaUser'))
+    /*console.log(listaUser)
+     Login efetuado com sucesso !
+    */
+
+    listaUser.forEach((item)=> {
+        if (usuario.value == item.usuarioCad && senha.value == item.senhaCad) {
+            userValid= {
+            nome:item.nomeCad,
+            user: item.usuarioCad,
+            senha: item.senhaCad
+            }
+        }
+    })
+
+    if (usuario.value == userValid.user && senha.value == userValid.senha) {
+        window.location.href = '/logado.html'
+    } else {
+        user_label.setAttribute('style','color:red')
+        usuario.setAttribute('style','border-color:red')
+        senha_label.setAttribute('style','color:red')
+        senha.setAttribute('style','border-color:red')       
+        msgError.setAttribute('style','display:block')
+        msgError.innerHTML = 'Usuário e Senha incorretos !'
+        usuario.value = ''
+        senha.value = ''
+        usuario.focus()
+
+    }
+
 }
